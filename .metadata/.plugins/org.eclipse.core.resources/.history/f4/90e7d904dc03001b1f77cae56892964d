@@ -1,0 +1,69 @@
+package com.carwash.userservice.services;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+
+import com.carwash.userservice.models.BookingInfo;
+import com.carwash.userservice.models.Cardetails;
+import com.carwash.userservice.repository.BookingInfoRepo;
+
+
+@Service
+public class BookingInfoService {
+	 
+	@Autowired
+	private BookingInfoRepo  bir;
+	
+	
+	public List<BookingInfo> allinfo()
+	{
+		
+		return bir.findAll();
+	}
+	
+	
+	public BookingInfo addinfo(BookingInfo bi)
+	{
+		return bir.save(bi);
+	}
+	
+
+	public List<BookingInfo> getinfo(String username)
+	{
+	
+	List<BookingInfo> users = new ArrayList<BookingInfo>();
+	List<BookingInfo> all = bir.findAll();
+	for(BookingInfo l : all)
+	{
+		if(l.getUsername().contentEquals(username))
+		{
+			users.add(l);
+		}
+	}
+	return users;
+}
+	
+	
+	public void status(BookingInfo detail) 
+	{
+		
+		bir.save(detail);
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}

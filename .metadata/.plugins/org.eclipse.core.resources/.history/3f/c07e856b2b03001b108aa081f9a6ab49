@@ -1,0 +1,21 @@
+package com.carwash.userservice.repository;
+
+import java.util.Optional;
+
+import org.springframework.data.mongodb.repository.MongoRepository;
+
+import com.carwash.userservice.models.Cardetails;
+import com.carwash.userservice.models.User;
+
+public interface CardetailsRepo extends MongoRepository<Cardetails, String> {
+
+	Cardetails findByEmailid(String emailid);
+
+		
+		
+		
+
+	}
+
+
+

@@ -1,0 +1,55 @@
+package com.carwash.washservice.controllers;
+
+import java.io.IOException;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.DeleteMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
+
+import com.carwash.washservice.models.Receipt;
+import com.carwash.washservice.services.ReceiptService;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+
+@RestController
+public class ReceiptController {
+	
+	
+	@Autowired
+	private ReceiptService rs;
+	
+	@GetMapping("/getservices")
+	public List<Receipt> getservices()
+	{
+		return rs.getreceipts();
+	}
+
+	@GetMapping("/getperticularservice/{id}")
+	public Receipt getperticularservice(@PathVariable String username)
+	{
+		return rs.getReceipt(username);
+	}
+	
+	@CrossOrigin(origins={"http://localhost:3000"})
+	@PostMapping("/addRec")
+	public Receipt addrec(@RequestParam("i") String i,@RequestParam("file") MultipartFile file) throws IOException
+	{
+		ObjectMapper objectMapper = new ObjectMapper();
+		Receipt w = objectMapper.readValue(i, Receipt.class);
+		return rs.addReceipt(w, file);
+	}
+	
+	@DeleteMapping("/deleteRec/{username}")
+	public Boolean deleteRec(@PathVariable String username)
+	{
+		return rs.deleteReceipt(username);
+	}
+
+}

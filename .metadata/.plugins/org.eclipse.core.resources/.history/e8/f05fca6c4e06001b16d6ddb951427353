@@ -1,0 +1,66 @@
+package com.carwash.washservice.services;
+
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import com.carwash.userservice.models.BookingInfo;
+import com.carwash.userservice.models.Rating;
+import com.carwash.userservice.models.User;
+import com.carwash.userservice.repository.BookingInfoRepo;
+import com.carwash.userservice.repository.Ratingrepo;
+
+
+@Service
+public class BookingInfoService {
+	 
+	@Autowired
+	private BookingInfoRepo  bir;
+	
+	@Autowired
+	private Ratingrepo  rc;
+	
+	
+	public List<BookingInfo> allinfo()
+	{
+		
+		return bir.findAll();
+	}
+	
+	
+	public BookingInfo addinfo(BookingInfo bi)
+	{
+		return bir.save(bi);
+	}
+	
+
+
+	
+	public void status(BookingInfo detail) 
+	{
+		
+		bir.save(detail);
+	}
+	
+public boolean editStatus(BookingInfo bi) {
+		
+		BookingInfo u = bir.findByEmailid(bi.getEmailid());
+		if (bi.getEmailid().equals(u.getEmailid()) && bi.getDate().equals(u.getDate())) {
+			 
+			u.setStatus(bi.getStatus());
+			
+			return true;
+			
+		}
+		return false;
+	}
+	
+	
+
+	
+	
+	
+	
+	
+
+}

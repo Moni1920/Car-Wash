@@ -1,0 +1,5 @@
+package com.carwash.userservice.services;
+
+public class RatingService {
+
+}

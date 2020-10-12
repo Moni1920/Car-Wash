@@ -1,0 +1,116 @@
+package com.carwash.userservice.models;
+
+import org.springframework.data.annotation.Id;
+
+public class BookingInfo {
+	
+	
+	@Id
+	private String id;
+	private String username;
+    private String washername;  
+    private Cardetails cardetails;
+    private Integer amount;
+    private String status;
+    private Integer rating;
+    private String review;
+    
+    
+  
+    
+	public BookingInfo() {
+		super();
+	}
+	
+	public BookingInfo(String id, String username, String washername, Cardetails cardetails, String washeraccepteddate,
+			Integer totalamount, long transactionid, long bookingid, String status, Integer rating, String review) {
+		super();
+		this.id = id;
+		this.username = username;
+		this.washername = washername;
+		this.cardetails = cardetails;
+		this.washeraccepteddate = washeraccepteddate;
+		this.totalamount = totalamount;
+		this.transactionid = transactionid;
+		this.bookingid = bookingid;
+		this.status = status;
+		this.rating = rating;
+		this.review = review;
+	}
+
+
+
+
+
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getWashername() {
+		return washername;
+	}
+	public void setWashername(String washername) {
+		this.washername = washername;
+	}
+	public Cardetails getCardetails() {
+		return cardetails;
+	}
+	public void setCardetails(Cardetails cardetails) {
+		this.cardetails = cardetails;
+	}
+	public String getWasheraccepteddate() {
+		return washeraccepteddate;
+	}
+	public void setWasheraccepteddate(String washeraccepteddate) {
+		this.washeraccepteddate = washeraccepteddate;
+	}
+	public Integer getTotalamount() {
+		return totalamount;
+	}
+	public void setTotalamount(Integer totalamount) {
+		this.totalamount = totalamount;
+	}
+	public long getTransactionid() {
+		return transactionid;
+	}
+	public void setTransactionid(long transactionid) {
+		this.transactionid = transactionid;
+	}
+	public long getBookingid() {
+		return bookingid;
+	}
+	public void setBookingid(long bookingid) {
+		this.bookingid = bookingid;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public Integer getRating() {
+		return rating;
+	}
+	public void setRating(Integer rating) {
+		this.rating = rating;
+	}
+	public String getReview() {
+		return review;
+	}
+	public void setReview(String review) {
+		this.review = review;
+	}
+    
+    
+    
+	
+
+}

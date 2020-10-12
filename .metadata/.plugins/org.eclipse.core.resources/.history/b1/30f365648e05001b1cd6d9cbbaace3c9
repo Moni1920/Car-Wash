@@ -1,0 +1,67 @@
+package com.carwash.washservice.models;
+
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.web.bind.annotation.CrossOrigin;
+
+@CrossOrigin(origins={"http://localhost:3000"})
+@Document(collection="Receipt")
+public class Receipt {
+	
+	@Id
+	private String id;
+	private String emailid;
+	private String servicetype;
+	private String status;
+	private Integer amount;
+	
+	
+
+	
+	
+	public Receipt(String id, String emailid, String servicetype, String status, Integer amount) {
+		super();
+		this.id = id;
+		this.emailid = emailid;
+		this.servicetype = servicetype;
+		this.status = status;
+		this.amount = amount;
+	}
+	public Receipt() {
+		super();
+	}
+	public String getId() {
+		return id;
+	}
+	public void setId(String id) {
+		this.id = id;
+	}
+	public String getServicetype() {
+		return servicetype;
+	}
+	public void setServicetype(String servicetype) {
+		this.servicetype = servicetype;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
+	}
+	public Integer getAmount() {
+		return amount;
+	}
+	public void setAmount(Integer amount) {
+		this.amount = amount;
+	}
+	public String getEmailid() {
+		return emailid;
+	}
+	public void setEmailid(String emailid) {
+		this.emailid = emailid;
+	}
+	
+
+
+	
+}

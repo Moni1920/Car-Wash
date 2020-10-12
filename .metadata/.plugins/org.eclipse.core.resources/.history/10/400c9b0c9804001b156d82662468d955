@@ -1,0 +1,5 @@
+package com.carwash.userservice.models;
+
+public class Rating {
+
+}
