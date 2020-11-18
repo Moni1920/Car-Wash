@@ -16340,3 +16340,4 @@ org.eclipse.core.runtime.CoreException: Could not resolve artifact org.junit.pla
 2020-11-19 00:00:47,773 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 1 resource
 2020-11-19 00:00:47,786 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2020-11-19 00:00:47,787 [Worker-37: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\monikv\Documents\workspace-sts-3.9.13.RELEASE\UserService\src\test\resources
+2020-11-19 00:06:10,392 [Worker-3: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
