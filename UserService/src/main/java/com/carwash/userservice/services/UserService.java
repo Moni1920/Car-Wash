@@ -2,12 +2,10 @@ package com.carwash.userservice.services;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.repository.CrudRepository;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-
-import com.carwash.userservice.models.Cardetails;
 import com.carwash.userservice.models.User;
 import com.carwash.userservice.repository.UserRepo;
 
@@ -17,6 +15,9 @@ public class UserService{
 	
 	@Autowired
 	UserRepo repo;
+	
+	@Autowired
+	private BCryptPasswordEncoder encoder;
 	
 	public List<User> getusers() 
 	{
@@ -35,22 +36,21 @@ public class UserService{
 			}
 			
 		}
+		user.setPassword(encoder.encode(user.getPassword()));
 		repo.save(user);
 		return true;
 	}
-	
-	
-	
-	
 	
 	
 	public boolean loginuser(User user) 
 	{
 		
 		List<User> users=repo.findAll();
+		System.out.println(users);
+		System.out.println(user);
 		for (User ab: users)
 		{
-			if(ab.getEmailid().contentEquals(user.getEmailid())&& ab.getPassword().contentEquals(user.getPassword()))
+			if(ab.getEmailid().contentEquals(user.getEmailid())&& ab.getPassword().contentEquals((user.getPassword())))
 			{
 				return true;
 			}
@@ -73,12 +73,6 @@ public class UserService{
 		return false;
 	}
 	
-		
-	
-		
-		
-	
-	
 	public List<User> getuserbyemail(User user)
 	{
 		List<User> users = new ArrayList<User>();
@@ -92,10 +86,6 @@ public class UserService{
 		}
 		return users;
 	}
-	
-	
-	
-	
 	
 	public List<User> getprofile(String username)
 	{

@@ -2,8 +2,11 @@ package com.carwash.userservice.services;
 
 import java.util.List;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PostMapping;
 import com.carwash.userservice.models.Rating;
 import com.carwash.userservice.repository.Ratingrepo;
 
@@ -28,7 +31,11 @@ public class RatingService {
 			return rc.save(bi);
 		}
 		
-
+		
+		
+		
+		
+		
 
 		
 	

@@ -1,14 +1,9 @@
 package com.carwash.userservice.services;
 
 import java.util.ArrayList;
-
 import java.util.List;
-import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-
 import com.carwash.userservice.models.Cardetails;
 import com.carwash.userservice.models.User;
 import com.carwash.userservice.repository.CardetailsRepo;
@@ -24,30 +19,15 @@ public class CardetailService {
 	
 	
 	public List<Cardetails> getdetails(){
-		
-		return repo.findAll();
-		
+		List<Cardetails> c = repo.findAll();
+		return c;
 		}
 	
-	public void adddetails(Cardetails detail) {
+	public Cardetails adddetails(Cardetails detail) {
 		
-		repo.save(detail);
+		 return repo.save(detail);
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
- 
-	
-	
-	
-	
-	
+
 	public List<Cardetails> getCarDetailsbyemail(User user)
 	{
 		List<Cardetails> users = new ArrayList<Cardetails>();

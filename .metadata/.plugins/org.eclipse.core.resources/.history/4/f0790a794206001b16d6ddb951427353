@@ -1,5 +1,0 @@
-package com.carwash.userservice.controllers;
-
-public class RatingController {
-
-}

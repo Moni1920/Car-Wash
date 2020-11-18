@@ -1,6 +1,6 @@
 package com.carwash.userservice.controllers;
 
-import java.util.Collection;
+
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -19,6 +19,7 @@ import com.carwash.userservice.services.CardetailService;
 
 
 @RestController
+@RequestMapping("/api")
 public class CardetailController {
 	
 	@Autowired
@@ -27,7 +28,7 @@ public class CardetailController {
 	
 	@CrossOrigin(origins={"http://localhost:3000"})
 	@GetMapping("/details")
-	public Collection<Cardetails>  getcar() {
+	public List<Cardetails>  getcar() {
 		
 	return serve.getdetails();
 		  
@@ -41,15 +42,10 @@ public class CardetailController {
 	}
 
 	
-
-	
-	
 	@CrossOrigin(origins={"http://localhost:3000"})
 	@PostMapping(value="/getcardetails")
 	public List<Cardetails> getCarDetailsbyId(@RequestBody User user) {
 	
-		
-		
 		return serve.getCarDetailsbyemail(user);
 	}
 }

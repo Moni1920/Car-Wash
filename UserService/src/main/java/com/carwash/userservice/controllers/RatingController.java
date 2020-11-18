@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.carwash.userservice.models.BookingInfo;
@@ -15,11 +16,9 @@ import com.carwash.userservice.models.Rating;
 import com.carwash.userservice.services.RatingService;
 
 @RestController
+@RequestMapping("/api")
 public class RatingController {
 	
-	
-	
-
 	@Autowired
 	 private RatingService serve;
 	

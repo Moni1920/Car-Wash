@@ -1,8 +1,4 @@
 package com.carwash.userservice.models;
- 
-
-
-import javax.validation.constraints.NotNull;
 
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -27,9 +23,6 @@ public class Cardetails {
 	private String date;
 	private String time;
     private String desc;
-    private String bookingid;
-    
-    
     
     
 	public Cardetails() {
@@ -42,9 +35,6 @@ public class Cardetails {
 	public String getId() {
 		return id;
 	}
-
-
-
 
 	public void setId(String id) {
 		this.id = id;
@@ -164,26 +154,8 @@ public class Cardetails {
 
 
 
-
-	public String getBookingid() {
-		return bookingid;
-	}
-
-
-
-
-	public void setBookingid(String bookingid) {
-		this.bookingid = bookingid;
-	}
-
-
-
-
-
-
-
 	public Cardetails(String id, String emailid, long mobileNumber, String carmodel, String location,
-			String serviceType, String date, String time, String desc, String bookingid
+			String serviceType, String date, String time, String desc
 			) {
 		super();
 		this.id = id;
@@ -195,16 +167,23 @@ public class Cardetails {
 		this.date = date;
 		this.time = time;
 		this.desc = desc;
-		this.bookingid = bookingid;
-		
-	
-	
-	
-    
-	
-	
 	
 	}
+
+
+
+
+	@Override
+	public String toString() {
+		return "Cardetails [id=" + id + ", emailid=" + emailid + ", mobileNumber=" + mobileNumber + ", carmodel="
+				+ carmodel + ", location=" + location + ", serviceType=" + serviceType + ", date=" + date + ", time="
+				+ time + ", desc=" + desc + "]";
+	}
+
+
+
+
+	
 	
 }
 

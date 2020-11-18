@@ -3,6 +3,6 @@
 <aop-project name="WashService"/>
 <aop-project name="AdminService"/>
 <aop-project name="UserService"/>
-<aop-project name="EurekaServer"/>
 <aop-project name="PaymentService"/>
+<aop-project name="EurekaServer"/>
 </aop-reference-model>
