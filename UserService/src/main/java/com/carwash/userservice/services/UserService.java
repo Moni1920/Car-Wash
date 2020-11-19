@@ -36,7 +36,7 @@ public class UserService{
 			}
 			
 		}
-		user.setPassword(encoder.encode(user.getPassword()));
+//		user.setPassword(encoder.encode(user.getPassword()));
 		repo.save(user);
 		return true;
 	}

@@ -46,7 +46,7 @@ public class WasherController {
 	}
 	
 	
-
+	@CrossOrigin(origins={"http://localhost:3000"})
 	@PostMapping("/registerWasher")
 	public boolean addwasher(@RequestBody Washerlogin wl) 
 	{

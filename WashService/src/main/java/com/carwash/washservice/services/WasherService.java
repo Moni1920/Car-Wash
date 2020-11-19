@@ -52,7 +52,7 @@ public class WasherService {
 			}
 			
 		}
-		wl.setPassword(encoder.encode(wl.getPassword()));
+//		wl.setPassword(encoder.encode(wl.getPassword()));
 		washerrepo.save(wl);
 		return true;
 	}

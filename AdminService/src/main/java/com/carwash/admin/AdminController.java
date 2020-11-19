@@ -39,7 +39,7 @@ public class AdminController {
 		
 		ServiceInstance serviceinstances=instances.get(0);
 		
-		String baseUrl= serviceinstances.getUri()+"/users";
+		String baseUrl= serviceinstances.getUri()+"api/users";
 		
 		 Collection < Users > list = rest.getForObject(baseUrl, Collection.class);
 		 System.out.println("RESPONSE " + list);
@@ -57,7 +57,7 @@ public class AdminController {
 		
 		ServiceInstance serviceinstances=instances.get(0);
 		
-		String baseUrl= serviceinstances.getUri()+"/details";
+		String baseUrl= serviceinstances.getUri()+"api/details";
 		
 		 Collection < Cardetails > list = rest.getForObject(baseUrl, Collection.class);
 		 System.out.println("RESPONSE " + list);
@@ -75,7 +75,7 @@ public class AdminController {
 		
 		ServiceInstance serviceinstances=instances.get(0);
 		
-		String baseUrl= serviceinstances.getUri()+"/info 	";
+		String baseUrl= serviceinstances.getUri()+"api/info 	";
 		
 		 Collection < BookingInfo > list = rest.getForObject(baseUrl, Collection.class);
 		 System.out.println("RESPONSE " + list);
@@ -94,7 +94,7 @@ public class AdminController {
 		
 		ServiceInstance serviceinstances=instances.get(0);
 		
-		String baseUrl= serviceinstances.getUri()+"/rate";
+		String baseUrl= serviceinstances.getUri()+"api/rate";
 		
 		 Collection < Rating > list = rest.getForObject(baseUrl, Collection.class);
 		 System.out.println("RESPONSE " + list);
@@ -112,7 +112,7 @@ public class AdminController {
 		
 		ServiceInstance serviceinstances=instances.get(0);
 		
-		String baseUrl= serviceinstances.getUri()+"/get";
+		String baseUrl= serviceinstances.getUri()+"api/get";
 		
 		 Collection < Washerlogin > list = rest.getForObject(baseUrl, Collection.class);
 		 System.out.println("RESPONSE " + list);
